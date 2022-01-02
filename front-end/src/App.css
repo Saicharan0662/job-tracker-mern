@@ -1,0 +1,16 @@
+.landing-bg{
+    background-image: url('../src/assets/background/background.svg');
+    background-repeat: no-repeat;
+    /* background-position: center center; */
+    background-size: cover;
+}
+
+.landing-text{
+    font-size: 100px;
+}
+
+@media screen and (max-width: 574px) {
+    .landing-text{
+        font-size: 50px;
+    }
+}
