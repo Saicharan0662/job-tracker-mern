@@ -50,7 +50,7 @@ const EditJob = () => {
     }
 
     return (
-        <div style={{ background: '#cacadf', minHeight: '100vh' }}>
+        <div className='flex justify-center items-center' style={{ background: '#cacadf', minHeight: '100vh' }}>
             <div className="fixed top-0 w-full" style={{ zIndex: '2' }}>
                 <Navbar code={2} />
                 {isLoading && <LinearProgress color="inherit" />}

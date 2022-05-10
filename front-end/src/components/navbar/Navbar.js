@@ -17,7 +17,7 @@ const Navbar = ({ code }) => {
         navigate('/')
     }
     return (
-        <div className='flex justify-between items-center text-gray font-sans px-4 font-semibold text-gray ' style={{ minHeight: '50px', background: "rgb(223 225 242 / 1)", zIndex: '2' }}>
+        <div className='flex justify-between items-center text-white font-sans px-4 font-bold text-gray ' style={{ minHeight: '50px', background: "#000080", zIndex: '2' }}>
             <h3>JOB TRACKER</h3>
             <h3 className='cursor-pointer' onClick={() => action()}>{code === 2 ? 'Logout' : code === 1 ? 'Login' : 'Signup'}</h3>
         </div>

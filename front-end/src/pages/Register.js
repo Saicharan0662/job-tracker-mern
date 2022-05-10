@@ -47,13 +47,13 @@ const Register = () => {
     }
 
     return (
-        <div style={{ background: '#cacadf', minHeight: '100vh' }}>
+        <div className='flex justify-center items-center' style={{ background: 'rgba(0, 0, 0, .1)', minHeight: '100vh' }}>
             <div className="fixed top-0 w-full" style={{ zIndex: '2' }}>
                 <Navbar code={1} />
                 {isLoading && <LinearProgress color="inherit" />}
             </div>
             <div className='w-full h-full flex justify-center items-center' style={{ boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24p' }}>
-                <div className='bg-white p-8 font-semibold my-16 flex flex-col items-center' style={{ minWidth: '27%' }}>
+                <div className='bg-white p-8 font-semibold my-16 flex flex-col items-center' style={{ minWidth: '25%' }}>
                     <h1 className="text-xl ">Register</h1>
                     <Box
                         component="form"
@@ -94,7 +94,7 @@ const Register = () => {
                                 label="Password"
                                 variant="standard"
                                 margin="normal"
-                                value={input.emailpassword}
+                                value={input.password}
                                 onChange={e => setInput({ ...input, password: e.target.value })}
                             />
                             <Button type='submit' variant="contained">Submit</Button>
