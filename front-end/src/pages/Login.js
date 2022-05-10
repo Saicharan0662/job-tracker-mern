@@ -5,6 +5,7 @@ import LinearProgress from '@mui/material/LinearProgress';
 import Button from '@mui/material/Button';
 import Navbar from '../components/navbar/Navbar';
 import { useNavigate } from 'react-router';
+import { Navigate } from 'react-router'
 import axios from 'axios';
 import '../axios'
 import { toast } from 'react-toastify';
@@ -12,6 +13,10 @@ import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
 
 const Login = () => {
+
+    const user = JSON.parse(localStorage.getItem('user')) ?
+        JSON.parse(localStorage.getItem('user')).name : null
+
     const navigate = useNavigate()
     const [input, setInput] = useState({
         email: "",
@@ -44,6 +49,7 @@ const Login = () => {
 
     return (
         <div className='flex justify-center items-center' style={{ background: 'rgba(0, 0, 0, .1)', minHeight: '100vh' }}>
+            {user && <Navigate to='/dashboard' />}
             <div className="fixed top-0 w-full" style={{ zIndex: '2' }}>
                 <Navbar code={0} />
                 {isLoading && <LinearProgress color="inherit" />}

@@ -6,6 +6,7 @@ import LinearProgress from '@mui/material/LinearProgress';
 import Button from '@mui/material/Button';
 import { useParams } from 'react-router';
 import { useNavigate } from 'react-router';
+import { Navigate } from 'react-router'
 import Navbar from '../components/navbar/Navbar';
 import axios from 'axios';
 import '../axios'
@@ -14,6 +15,10 @@ import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
 
 const EditJob = () => {
+
+    const user = JSON.parse(localStorage.getItem('user')) ?
+        JSON.parse(localStorage.getItem('user')).name : null
+
     const [input, setInput] = useState({ company: "", position: "", status: "" })
     const optionList = ['interview', 'declined', 'pending']
     const [isLoading, setIsLoading] = useState(false)
@@ -51,6 +56,7 @@ const EditJob = () => {
 
     return (
         <div className='flex justify-center items-center' style={{ background: '#cacadf', minHeight: '100vh' }}>
+            {!user && <Navigate to='/' />}
             <div className="fixed top-0 w-full" style={{ zIndex: '2' }}>
                 <Navbar code={2} />
                 {isLoading && <LinearProgress color="inherit" />}
