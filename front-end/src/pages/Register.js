@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import LinearProgress from '@mui/material/LinearProgress';
 import { useNavigate } from 'react-router';
 import { Navigate } from 'react-router'
 import axios from 'axios';
@@ -55,8 +54,7 @@ const Register = () => {
         <div className='flex justify-center items-center' style={{ background: 'rgba(0, 0, 0, .1)', minHeight: '100vh' }}>
             {user && <Navigate to='/dashboard' />}
             <div className="fixed top-0 w-full" style={{ zIndex: '2' }}>
-                <Navbar code={1} />
-                {isLoading && <LinearProgress color="inherit" />}
+                <Navbar code={1} isLoading={isLoading} />
             </div>
             <div className='w-full h-full flex justify-center items-center' style={{ boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24p' }}>
                 <div className='bg-white p-8 font-semibold my-16 flex flex-col items-center' style={{ minWidth: '25%' }}>

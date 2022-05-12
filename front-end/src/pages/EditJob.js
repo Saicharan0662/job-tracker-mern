@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import LinearProgress from '@mui/material/LinearProgress';
 import Button from '@mui/material/Button';
 import { useParams } from 'react-router';
 import { useNavigate } from 'react-router';
@@ -58,8 +57,7 @@ const EditJob = () => {
         <div className='flex justify-center items-center' style={{ background: '#cacadf', minHeight: '100vh' }}>
             {!user && <Navigate to='/' />}
             <div className="fixed top-0 w-full" style={{ zIndex: '2' }}>
-                <Navbar code={2} />
-                {isLoading && <LinearProgress color="inherit" />}
+                <Navbar code={2} isLoading={isLoading} />
             </div>
             <div className='w-full flex flex-col items-center' >
                 <div className='bg-white p-8 font-semibold my-16 flex flex-col items-center' style={{ minWidth: '27%', boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24p" }}>

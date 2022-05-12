@@ -3,7 +3,6 @@ import { Navigate } from 'react-router'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import LinearProgress from '@mui/material/LinearProgress';
 import Card from '../components/job-card/Card';
 import Navbar from '../components/navbar/Navbar';
 import axios from 'axios';
@@ -51,8 +50,7 @@ const Dashboard = () => {
             {!user && <Navigate to='/' />}
             <div style={{ background: '#cacadf', minHeight: '100vh' }}>
                 <div className="fixed top-0 w-full" style={{ zIndex: '2' }}>
-                    <Navbar code={2} />
-                    {isLoading && <LinearProgress color="inherit" />}
+                    <Navbar code={2} isLoading={isLoading} />
                 </div>
                 <div className='w-full flex flex-col items-center' style={{ boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24p' }}>
                     <div className='bg-white p-8 font-semibold my-16 flex flex-col items-center' style={{ minWidth: '27%' }}>
